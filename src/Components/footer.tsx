@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
            {/* Navigation Links */}
-           <nav className='flex columns- gap-2'>
+           <nav className='flex columns-2 gap-3'>
             <Link href="/AreaSaude" className="hover:text-yellow-200 transition-colors duration-200 font-medium">
                 Área da Saúde </Link>
 

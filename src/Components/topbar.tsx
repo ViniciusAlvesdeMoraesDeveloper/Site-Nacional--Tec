@@ -17,13 +17,13 @@ export default function TopBar() {
           <div className="hidden md:flex items-center space-x-8">
             <nav className="flex items-center space-x-8">
               <Link
-                href="/inicio"
+                href="#header"
                 className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Início
               </Link>
               <Link
-                href="#Area Cursos"
+                href="#AreaCursos"
                 className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Cursos
