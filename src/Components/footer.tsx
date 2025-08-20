@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
            {/* Navigation Links */}
-           <nav className='flex columns-2 gap-3'>
+           <nav className='flex columns- gap-4'>
             <Link href="/AreaSaude" className="hover:text-yellow-200 transition-colors duration-200 font-medium">
                 Área da Saúde </Link>
 
@@ -58,13 +58,13 @@ export default function Footer() {
 
 
             {/* Social Media Links */}
-          <div id='sobrenos'>
-            <h4 className="text-lg font-semibold mb-4">Sobre Nós:</h4>
+          <div id='sobrenos' className='flex colums- gap-2'>
+            <h4 className="text-lg font-semibold mb-4 mt-1">Sobre Nós:</h4>
             <nav className="flex flex-col gap-4">
               <Link href="/about" className="hover:text-yellow-200 transition-colors duration-200 text-sm">
                 
               </Link>
-              <div className="flex gap-4">
+              <div className="flex gap-2">
                 <Link
                   href="https://www.instagram.com/nacionaltec.ead?igsh=MThmYWhibjdvOTRheQ=="
                   className="hover:text-yellow-200 transition-colors duration-200"

@@ -1,37 +1,58 @@
-"use client"; // porque vamos usar useState
-import React, { useState } from "react";
+// src/pages/page.tsx
+
+"use client";
+
 import TopBar from "../Components/topbar";
 import Footer from "../Components/footer";
 import BottomUpper from "../Components/bottomupper";
-import CardPage, { CardPageProps } from "./card";
+
 import Storaged from "@/utils/storeged";
-import SearchSection from "@/Components/SearchSection";
+
 import AreaCard from "@/Components/course-areas";
+import HeroSection from "@/Components/HeroSection"; 
+import { useState, useEffect } from 'react';
+import { CardPageProps } from './card';
+
+// Caminho da imagem na pasta 'public'
+const BANNER_IMAGE_PATH = '/NacionalTec-logo.webp';
 
 export default function Page() {
-  // Obtemos todas as áreas
-  const areas: CardPageProps[] = Storaged();
-
-  // Estado para a busca por título
+  const allAreas: CardPageProps[] = Storaged();
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredAreas, setFilteredAreas] = useState(allAreas);
 
-  // Filtragem simples
-  const filteredAreas = areas.filter((area) =>
-    area.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleSearch = (query: string) => {
+    const lowerCaseQuery = query.toLowerCase();
+
+    const results = allAreas.filter((area) => {
+      const matchesTitle = area.title.toLowerCase().includes(lowerCaseQuery);
+      const matchesFlag = area.flag.toLowerCase().includes(lowerCaseQuery);
+      return matchesTitle || matchesFlag;
+    });
+
+    setFilteredAreas(results);
+  };
+
+  useEffect(() => {
+    handleSearch(searchTerm);
+  }, [searchTerm]);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col w-full">
       <TopBar />
 
       <main className="flex-1 w-full">
-        {/* Se você tiver um componente de busca */}
-        <SearchSection  searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-        
-
-        {/* Seção de áreas */}
+        {/* Seção do Hero, banner e search */}
+        <HeroSection
+          bannerImage={BANNER_IMAGE_PATH}
+          placeholderText="Pesquisar por cursos..."
+          inputValue={searchTerm}
+          onInputChange={setSearchTerm}
+          onSearch={handleSearch}
+        />
+        {/* Seção de áreas filtradas */}
         <section className="py-16 w-full bg-white ">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="cards" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Áreas de Conhecimento
@@ -47,6 +68,9 @@ export default function Page() {
                 <AreaCard key={index} {...area} />
               ))}
             </div>
+            {filteredAreas.length === 0 && searchTerm !== "" && (
+              <p className="text-center text-gray-500 mt-8">Nenhuma área encontrada para "{searchTerm}".</p>
+            )}
           </div>
         </section>
       </main>

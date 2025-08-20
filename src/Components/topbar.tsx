@@ -23,7 +23,7 @@ export default function TopBar() {
                 Início
               </Link>
               <Link
-                href="#AreaCursos"
+                href="#cards"
                 className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Cursos

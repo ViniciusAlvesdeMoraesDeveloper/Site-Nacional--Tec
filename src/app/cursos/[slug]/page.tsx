@@ -31,19 +31,22 @@ export default function CursosSlugPage() {
     )
   }
 
-  // Card dos cursos mockados
-  const realCourses = currentArea.courses||[]
-  return(
+  // Card dos cursos 
+  const realCourses = currentArea.courses || []
+  return (
     <div className="bg-gray-50 flex flex-col w-full">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+      <div className="bg-gradient-to-r from-yellow-500 to-green-500 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
             className="group inline-flex items-center gap-2 mb-6 text-blue-200 hover:text-white transition-colors"
           >
-            <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-            Voltar para áreas
+
+            <h2 className="flex items-center bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 group cursor-pointer">
+              <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform text-white" />
+              Voltar para áreas
+            </h2>
           </Link>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Cursos de {currentArea.category}</h1>
@@ -52,14 +55,11 @@ export default function CursosSlugPage() {
       </div>
 
       {/* Courses Grid */}
-      <div className="py-16 bg-white w-full">
+      <div className="py-16 bg-white w-full flex flex-col ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {realCourses.map((course) => (
-              <div
-                key={course.id}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:scale-[1.02]"
-              >
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:scale-[1.02] h-full flex flex-col">
                 <div className="relative h-48">
                   <Image
                     src={course.img?.src || "/placeholder.svg"}
@@ -69,9 +69,9 @@ export default function CursosSlugPage() {
                   />
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
+                    <span className="px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-blue-800">
                       {course.category}
                     </span>
                   </div>
@@ -80,7 +80,7 @@ export default function CursosSlugPage() {
                     {course.title}
                   </h3>
 
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{course.description}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{course.description}</p>
 
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <div className="flex items-center gap-1">
@@ -101,7 +101,7 @@ export default function CursosSlugPage() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg">
+                  <button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg mt-auto">
                     Matricular Agora
                   </button>
                 </div>
