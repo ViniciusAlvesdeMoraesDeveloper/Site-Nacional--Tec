@@ -11,7 +11,7 @@ const HomePage = () => {
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div id='modal' className="flex flex-col items-center justify-center min-h-screen p-4">
       <h1 className="text-4xl font-bold mb-8">Página Principal</h1>
       <button
         onClick={handleOpenModal}

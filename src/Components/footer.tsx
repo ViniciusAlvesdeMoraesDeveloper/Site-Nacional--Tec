@@ -14,9 +14,9 @@ export default function Footer() {
           <div className="flex items-center mb-4 md:mb-0">
             <div><Image className='rounded-full mr-8'
               src="/NacionaTec-logo.webp"
-                alt="Nacional Tec Logo"
-                width={100}
-                height={100}
+              alt="Nacional Tec Logo"
+              width={100}
+              height={100}
             /></div>
             <div className='flex flex-col gap-1 '>
               <h3 className="text-xl font-bold">Nacional Tec</h3>
@@ -30,62 +30,72 @@ export default function Footer() {
             </div>
           </div>
 
-           {/* Navigation Links */}
-           <nav className='flex columns- gap-4'>
-            <Link href="/AreaSaude" className="hover:text-yellow-200 transition-colors duration-200 font-medium">
-                Área da Saúde </Link>
-
-            <Link href="Tecnologia" className="hover:text-yellow-200 transition-colors duration-200 font-medium">
-                Área de Tecnologia</Link>
-
-            <Link href="Administracao" className="hover:text-yellow-200 transition-colors duration-200 font-medium">
-                Área de Administração</Link>
-
-            <Link href="Engenharia" className="hover:text-yellow-200 transition-colors duration-200 font-medium">           
-                Área de Engenharia e Manutenção</Link>
-
-            <Link href="Infraestrutura" className='hover:text-yellow-200 transition-colors duration-200 font-medium'>
-                Área de Construção e Infraestrutura</Link>
-
-            <Link href="Meio-ambiente" className='hover:text-yellow-200 transition-colors duration-200 font-medium'>
-                Área de Meio Ambiente e Agropecuária</Link> 
-
-            <Link href="Servicos" className='hover:text-yellow-200 transition-colors duration-200 font-medium'>
-                Área de Serviços</Link>              
-           </nav>
+          {/* Áreas ofertadas*/}
 
 
-
-
-            {/* Social Media Links */}
-          <div id='sobrenos' className='flex colums- gap-2'>
-            <h4 className="text-lg font-semibold mb-4 mt-1">Sobre Nós:</h4>
-            <nav className="flex flex-col gap-4">
-              <Link href="/about" className="hover:text-yellow-200 transition-colors duration-200 text-sm">
-                
-              </Link>
-              <div className="flex gap-2">
-                <Link
-                  href="https://www.instagram.com/nacionaltec.ead?igsh=MThmYWhibjdvOTRheQ=="
-                  className="hover:text-yellow-200 transition-colors duration-200"
-                >
-                  <Instagram size={24} />
-                </Link>
-                <Link
-                  href="https://www.facebook.com/nacionaltec.ead?mibextid=wwXIfr&mibextid=wwXIfr"
-                  className="hover:text-yellow-200 transition-colors duration-200"
-                >
-                  <Facebook size={24} />
-                </Link>
-              </div>
+          <div className="flex flex-col items-center gap-6 py-8">
+            <div className="text-center">
+              <h1 className="text-2xl font-bold text-white">Áreas ofertadas</h1>
+            </div>
+            <nav className="flex flex-wrap justify-center gap-4 max-w-7xl">
+              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+                Área da Saúde
+              </span>
+              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+                Área de Tecnologia
+              </span>
+              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+                Área de Administração
+              </span>
+              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+                Área de Engenharia e Manutenção
+              </span>
+              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+                Área de Construção e Infraestrutura
+              </span>
+              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+                Área de Meio Ambiente e Agropecuária
+              </span>
+              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+                Área de Serviços
+              </span>
             </nav>
           </div>
-      </div>
+
+
+
+
+          {/* Social Media Links */}
+          <div className="flex flex-col items-center gap-6 py-8">
+            <div className="text-center">
+              <h4 className="text-2xl font-bold text-white">Sobre Nós:</h4>
+              <nav className="flex flex-col gap-4">
+                <Link href="/about" className="hover:text-yellow-200 transition-colors duration-200 text-sm">
+
+                </Link>
+                <div className="flex gap-2">
+                  <Link
+                    href="https://www.instagram.com/nacionaltec.ead?igsh=MThmYWhibjdvOTRheQ=="
+                    className="hover:text-yellow-200 transition-colors duration-200"
+                  >
+                    <Instagram size={24} />
+                  </Link>
+                  <Link
+                    href="https://www.facebook.com/nacionaltec.ead?mibextid=wwXIfr&mibextid=wwXIfr"
+                    className="hover:text-yellow-200 transition-colors duration-200"
+                  >
+                    <Facebook size={24} />
+                  </Link>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
       </div>
       {/* Copyright */}
-        <div className="border-t border-white/20 mt-8 pt-4 text-center text-sm opacity-80">
-          <p>&copy; 2024 Nacional Tec. Todos os direitos reservados.</p>
-        </div>
+      <div className="border-t border-white/20 mt-8 pt-4 text-center text-sm opacity-80">
+        <p>&copy; 2024 Nacional Tec. Todos os direitos reservados.</p>
+      </div>
     </footer>
   )
 }

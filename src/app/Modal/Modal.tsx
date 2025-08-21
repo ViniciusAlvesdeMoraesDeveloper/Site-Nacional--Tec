@@ -12,7 +12,7 @@ if(!isOpen) return null;
 return(
 
     <ModalPortal>
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300" onClick={onClose}>
+        <div className="fixed inset-0 bg-slate-900/70 backdrop-blur-md flex items-center justify-center z-50 transition-opacity duration-300" onClick={onClose}>
         <div
           className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full relative transform transition-transform duration-300 scale-100"
           onClick={(e) => e.stopPropagation()} // Impede que o clique no modal feche-o

@@ -1,10 +1,17 @@
 import React from 'react';
-import { MessageCircle}  from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import Link from 'next/link';
+import Modal from '@/app/Modal/Modal';
+import { useState } from 'react';
+import RegistrationForm from '@/app/Modal/RegistrationForm';
+
 
 export default function TopBar() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
   return (
-     <header id='header' className="w-full bg-gradient-to-r from-green-600 to-yellow-400 border-b border-green-700 shadow-sm">
+    <header id='header' className="w-full bg-gradient-to-r from-green-600 to-yellow-400 border-b border-green-700 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
@@ -59,9 +66,22 @@ export default function TopBar() {
                 <MessageCircle size={24} />
               </Link>
             </div>
+            <div>
+              {/* Este é o botão que acionará a abertura do modal */}
+              <button
+                onClick={handleOpenModal}
+                className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              >
+                Cadastre-se!
+              </button>
+              <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+                <RegistrationForm/>
+              </Modal>
+              
+            </div>
           </div>
         </div>
       </div>
-      </header>
-    );
-  }
+    </header>
+  );
+}

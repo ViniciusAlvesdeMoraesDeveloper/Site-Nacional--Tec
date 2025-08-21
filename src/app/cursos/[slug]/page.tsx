@@ -59,7 +59,7 @@ export default function CursosSlugPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {realCourses.map((course) => (
-              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:scale-[1.02] h-full flex flex-col">
+              <div key={course.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:scale-[1.02] h-full flex flex-col">
                 <div className="relative h-48">
                   <Image
                     src={course.img?.src || "/placeholder.svg"}

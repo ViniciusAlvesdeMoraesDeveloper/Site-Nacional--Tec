@@ -5,21 +5,25 @@
 import TopBar from "../Components/topbar";
 import Footer from "../Components/footer";
 import BottomUpper from "../Components/bottomupper";
-
 import Storaged from "@/utils/storeged";
-
 import AreaCard from "@/Components/course-areas";
-import HeroSection from "@/Components/HeroSection"; 
+import HeroSection from "@/Components/HeroSection";
 import { useState, useEffect } from 'react';
 import { CardPageProps } from './card';
+import Modal from "./Modal/Modal";
 
 // Caminho da imagem na pasta 'public'
-const BANNER_IMAGE_PATH = '/NacionalTec-logo.webp';
+const BANNER_IMAGE_PATH = '/.webp';
 
 export default function Page() {
   const allAreas: CardPageProps[] = Storaged();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredAreas, setFilteredAreas] = useState(allAreas);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
 
   const handleSearch = (query: string) => {
     const lowerCaseQuery = query.toLowerCase();
@@ -40,7 +44,6 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col w-full">
       <TopBar />
-
       <main className="flex-1 w-full">
         {/* Seção do Hero, banner e search */}
         <HeroSection
