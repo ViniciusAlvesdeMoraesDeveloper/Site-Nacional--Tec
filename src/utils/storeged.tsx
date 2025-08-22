@@ -9,6 +9,7 @@ export interface Course {
   img: {
     src: string
     alt: string
+    slug:string
   }
 }
 

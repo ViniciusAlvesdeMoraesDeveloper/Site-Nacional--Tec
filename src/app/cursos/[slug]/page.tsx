@@ -5,6 +5,7 @@ import Storaged from "@/utils/storeged"
 import { slugify } from "@/utils/slugify"
 import { ArrowLeft, BookOpen, Clock, Users, Award } from "lucide-react"
 import Image from "next/image"
+import CoursePage from "@/app/coursespage/[slug]/page";
 
 export default function CursosSlugPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -101,10 +102,14 @@ export default function CursosSlugPage() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg mt-auto">
-                    Matricular Agora
-                  </button>
+                 
+                  <Link href={`${(course.title)}`} passHref>
+                    <button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg mt-auto">
+                      Matricular Agora
+                    </button>
+                  </Link>
                 </div>
+                
               </div>
             ))}
           </div>
