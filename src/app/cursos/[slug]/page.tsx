@@ -5,7 +5,7 @@ import Storaged from "@/utils/storeged"
 import { slugify } from "@/utils/slugify"
 import { ArrowLeft, BookOpen, Clock, Users, Award } from "lucide-react"
 import Image from "next/image"
-import CoursePage from "@/app/coursespage/[slug]/page";
+import CoursePage from "@/app/courses/[slug]/page";
 
 export default function CursosSlugPage() {
   const { slug } = useParams<{ slug: string }>()
