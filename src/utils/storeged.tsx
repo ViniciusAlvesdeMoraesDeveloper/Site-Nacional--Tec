@@ -1,28 +1,28 @@
-import type { CardPageProps } from "../types/cousers"
+import type { CardPageProps } from "../types/cousers";
 
 export interface Course {
-  id: number
-  title: string
-  description: string
-  category: string
-  flag: string
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  flag: string;
   img: {
-    src: string
-    alt: string
-    slug:string
-  }
+    src: string;
+    alt: string;
+  };
+  slug: string; // Adicionada a propriedade slug aqui
 }
 
 export interface Area {
-  title: string
-  description: string
-  category: string
-  flag: string
+  title: string;
+  description: string;
+  category: string;
+  flag: string;
   img: {
-    src: string
-    alt: string
-  }
-  courses: Course[]
+    src: string;
+    alt: string;
+  };
+  courses: Course[];
 }
 
 export default function Storaged(): CardPageProps[] {
@@ -52,28 +52,33 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/4167543/pexels-photo-4167543.jpeg",
             alt: "Agente de Saúde",
           },
+          slug: "tecnico-em-agente-comunitario-de-saude",
         },
         {
           id: 2,
           title: "Técnico em Análises Clínicas",
-          description: "Aprenda a realizar exames laboratoriais com precisão, auxiliando no diagnóstico de doenças.",
+          description:
+            "Aprenda a realizar exames laboratoriais com precisão, auxiliando no diagnóstico de doenças.",
           category: "Saúde",
           flag: "Saude",
           img: {
             src: "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
             alt: "Análises Clínicas",
           },
+          slug: "tecnico-em-analises-clinicas",
         },
         {
           id: 3,
           title: "Técnico em Cuidados de Idosos",
-          description: "Formação para atuar no cuidado humanizado a idosos, promovendo qualidade de vida e bem-estar.",
+          description:
+            "Formação para atuar no cuidado humanizado a idosos, promovendo qualidade de vida e bem-estar.",
           category: "Saúde",
           flag: "Saude",
           img: {
             src: "https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg",
             alt: "Cuidados de Idosos",
           },
+          slug: "tecnico-em-cuidados-de-idosos",
         },
         {
           id: 4,
@@ -86,6 +91,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/5207015/pexels-photo-5207015.jpeg",
             alt: "Enfermagem",
           },
+          slug: "tecnico-em-enfermagem",
         },
         {
           id: 5,
@@ -98,6 +104,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/7470817/pexels-photo-7470817.jpeg",
             alt: "Equipamentos Biomédicos",
           },
+          slug: "tecnico-em-equipamentos-biomedicos",
         },
         {
           id: 6,
@@ -110,6 +117,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/4021808/pexels-photo-4021808.jpeg",
             alt: "Farmácia",
           },
+          slug: "tecnico-em-farmacia",
         },
         {
           id: 7,
@@ -122,6 +130,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/6627938/pexels-photo-6627938.jpeg",
             alt: "Gerência em Saúde",
           },
+          slug: "tecnico-em-gerencia-em-saude",
         },
         {
           id: 8,
@@ -134,17 +143,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/1172019/pexels-photo-1172019.jpeg",
             alt: "Nutrição e Dietética",
           },
+          slug: "tecnico-em-nutricao-e-dietetica",
         },
         {
           id: 9,
           title: "Técnico em Radiologia",
-          description: "Formação para operar equipamentos de diagnóstico por imagem, com foco em segurança e precisão.",
+          description:
+            "Formação para operar equipamentos de diagnóstico por imagem, com foco em segurança e precisão.",
           category: "Saúde",
           flag: "Saude",
           img: {
             src: "https://images.pexels.com/photos/4226119/pexels-photo-4226119.jpeg",
             alt: "Radiologia",
           },
+          slug: "tecnico-em-radiologia",
         },
         {
           id: 10,
@@ -157,17 +169,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/6627315/pexels-photo-6627315.jpeg",
             alt: "Saúde Bucal",
           },
+          slug: "tecnico-em-saude-bucal",
         },
         {
           id: 11,
           title: "Técnico em Veterinária",
-          description: "Aprenda técnicas de cuidado, prevenção e tratamento para atuar junto a médicos veterinários.",
+          description:
+            "Aprenda técnicas de cuidado, prevenção e tratamento para atuar junto a médicos veterinários.",
           category: "Saúde",
           flag: "Saude",
           img: {
             src: "https://images.pexels.com/photos/5487067/pexels-photo-5487067.jpeg",
             alt: "Veterinária",
           },
+          slug: "tecnico-em-veterinaria",
         },
       ],
     },
@@ -196,6 +211,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/7876786/pexels-photo-7876786.jpeg",
             alt: "Administração",
           },
+          slug: "tecnico-em-administracao",
         },
         {
           id: 13,
@@ -208,6 +224,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/4476375/pexels-photo-4476375.jpeg",
             alt: "Contabilidade",
           },
+          slug: "tecnico-em-contabilidade",
         },
         {
           id: 14,
@@ -220,17 +237,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/4484078/pexels-photo-4484078.jpeg",
             alt: "Logística",
           },
+          slug: "tecnico-em-logistica",
         },
         {
           id: 15,
           title: "Técnico em Marketing",
-          description: "Aprenda a desenvolver campanhas, pesquisas de mercado e estratégias de comunicação eficazes.",
+          description:
+            "Aprenda a desenvolver campanhas, pesquisas de mercado e estratégias de comunicação eficazes.",
           category: "Gestão",
           flag: "Gestao",
           img: {
             src: "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg",
             alt: "Marketing",
           },
+          slug: "tecnico-em-marketing",
         },
         {
           id: 16,
@@ -243,6 +263,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/5532842/pexels-photo-5532842.jpeg",
             alt: "Qualidade",
           },
+          slug: "tecnico-em-qualidade",
         },
         {
           id: 17,
@@ -255,17 +276,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/5989933/pexels-photo-5989933.jpeg",
             alt: "Recursos Humanos",
           },
+          slug: "tecnico-em-recursos-humanos",
         },
         {
           id: 18,
           title: "Técnico em Secretaria Escolar",
-          description: "Capacite-se para atuar no setor administrativo escolar, apoiando processos educacionais.",
+          description:
+            "Capacite-se para atuar no setor administrativo escolar, apoiando processos educacionais.",
           category: "Gestão",
           flag: "Gestao",
           img: {
             src: "https://images.pexels.com/photos/7648004/pexels-photo-7648004.jpeg",
             alt: "Secretaria Escolar",
           },
+          slug: "tecnico-em-secretaria-escolar",
         },
         {
           id: 19,
@@ -278,6 +302,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg",
             alt: "Segurança do Trabalho",
           },
+          slug: "tecnico-em-seguranca-do-trabalho",
         },
         {
           id: 20,
@@ -290,6 +315,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/5669602/pexels-photo-5669602.jpeg",
             alt: "Serviços Jurídicos",
           },
+          slug: "tecnico-em-servicos-juridicos",
         },
         {
           id: 21,
@@ -302,6 +328,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/8293778/pexels-photo-8293778.jpeg",
             alt: "Transações Imobiliárias",
           },
+          slug: "tecnico-em-transacoes-imobiliarias",
         },
         {
           id: 22,
@@ -314,17 +341,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/2182973/pexels-photo-2182973.jpeg",
             alt: "Vendas",
           },
+          slug: "tecnico-em-vendas",
         },
         {
           id: 23,
           title: "Curso Técnico em Eventos",
-          description: "Capacite-se para planejar, organizar e executar eventos corporativos, culturais e sociais.",
+          description:
+            "Capacite-se para planejar, organizar e executar eventos corporativos, culturais e sociais.",
           category: "Gestão",
           flag: "Gestao",
           img: {
             src: "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg",
             alt: "Eventos",
           },
+          slug: "curso-tecnico-em-eventos",
         },
       ],
     },
@@ -353,6 +383,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/3912518/pexels-photo-3912518.jpeg",
             alt: "Biotecnologia",
           },
+          slug: "tecnico-em-biotecnologia",
         },
         {
           id: 25,
@@ -365,6 +396,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg",
             alt: "Design Gráfico",
           },
+          slug: "tecnico-em-design-grafico",
         },
         {
           id: 26,
@@ -377,17 +409,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
             alt: "Desenvolvimento de Sistemas",
           },
+          slug: "tecnico-em-desenvolvimento-de-sistemas",
         },
         {
           id: 27,
           title: "Técnico em Informática para Internet",
-          description: "Formação em criação e manutenção de sites, aplicações web e integração de sistemas online.",
+          description:
+            "Formação em criação e manutenção de sites, aplicações web e integração de sistemas online.",
           category: "Tecnologia",
           flag: "Tecnologia",
           img: {
             src: "https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg",
             alt: "Informática para Internet",
           },
+          slug: "tecnico-em-informatica-para-internet",
         },
         {
           id: 28,
@@ -400,6 +435,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg",
             alt: "Redes de Computadores",
           },
+          slug: "tecnico-em-redes-de-computadores",
         },
         {
           id: 29,
@@ -412,17 +448,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg",
             alt: "Sistemas de Energia Renovável",
           },
+          slug: "tecnico-em-sistemas-de-energia-renovavel",
         },
         {
           id: 30,
           title: "Técnico em Telecomunicações",
-          description: "Aprenda a trabalhar com sistemas de telefonia, internet, TV digital e comunicação de dados.",
+          description:
+            "Aprenda a trabalhar com sistemas de telefonia, internet, TV digital e comunicação de dados.",
           category: "Tecnologia",
           flag: "Tecnologia",
           img: {
             src: "https://images.pexels.com/photos/15483318/pexels-photo-15483318.jpeg",
             alt: "Telecomunicações",
           },
+          slug: "tecnico-em-telecomunicacoes",
         },
         {
           id: 31,
@@ -435,6 +474,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/10031326/pexels-photo-10031326.jpeg",
             alt: "Tradução e Interpretação de Libras",
           },
+          slug: "tecnico-em-traducao-e-interpretacao-de-libras",
         },
       ],
     },
@@ -455,13 +495,15 @@ export default function Storaged(): CardPageProps[] {
         {
           id: 32,
           title: "Técnico em Automação Industrial",
-          description: "Aprenda a implementar e manter sistemas automatizados, integrando tecnologias na indústria.",
+          description:
+            "Aprenda a implementar e manter sistemas automatizados, integrando tecnologias na indústria.",
           category: "Engenharia",
           flag: "Engenharia",
           img: {
             src: "https://images.pexels.com/photos/8113500/pexels-photo-8113500.jpeg",
             alt: "Automação Industrial",
           },
+          slug: "tecnico-em-automacao-industrial",
         },
         {
           id: 33,
@@ -474,17 +516,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/9242824/pexels-photo-9242824.jpeg",
             alt: "Eletromecânica",
           },
+          slug: "tecnico-em-eletromecanica",
         },
         {
           id: 34,
           title: "Técnico em Eletrotécnica",
-          description: "Aprenda a projetar, instalar e manter sistemas elétricos industriais e prediais com segurança.",
+          description:
+            "Aprenda a projetar, instalar e manter sistemas elétricos industriais e prediais com segurança.",
           category: "Engenharia",
           flag: "Engenharia",
           img: {
             src: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg",
             alt: "Eletrotécnica",
           },
+          slug: "tecnico-em-eletrotecnica",
         },
         {
           id: 35,
@@ -497,6 +542,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/39290/mother-board-electronics-computer-board-39290.jpeg",
             alt: "Eletrônica",
           },
+          slug: "tecnico-em-eletronica",
         },
         {
           id: 36,
@@ -509,6 +555,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg",
             alt: "Máquinas Industriais",
           },
+          slug: "tecnico-em-manutencao-de-maquinas-industriais",
         },
         {
           id: 37,
@@ -521,6 +568,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/1716008/pexels-photo-1716008.jpeg",
             alt: "Máquinas Pesadas",
           },
+          slug: "tecnico-em-maquinas-pesadas",
         },
         {
           id: 38,
@@ -533,6 +581,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/10037658/pexels-photo-10037658.jpeg",
             alt: "Metalurgia",
           },
+          slug: "tecnico-em-metalurgia",
         },
         {
           id: 39,
@@ -545,6 +594,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg",
             alt: "Refrigeração e Climatização",
           },
+          slug: "tecnico-em-refrigeracao-e-climatizacao",
         },
         {
           id: 40,
@@ -557,17 +607,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/2381463/pexels-photo-2381463.jpeg",
             alt: "Soldagem",
           },
+          slug: "tecnico-em-soldagem",
         },
         {
           id: 41,
           title: "Técnico em Manutenção de Máquinas Navais",
-          description: "Aprenda a operar e manter sistemas e máquinas navais, atuando em portos e embarcações.",
+          description:
+            "Aprenda a operar e manter sistemas e máquinas navais, atuando em portos e embarcações.",
           category: "Engenharia",
           flag: "Engenharia",
           img: {
             src: "https://images.pexels.com/photos/2076828/pexels-photo-2076828.jpeg",
             alt: "Máquinas Navais",
           },
+          slug: "tecnico-em-manutencao-de-maquinas-navais",
         },
       ],
     },
@@ -596,17 +649,20 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/7499043/pexels-photo-7499043.jpeg",
             alt: "Agrimensura",
           },
+          slug: "tecnico-em-agrimensura",
         },
         {
           id: 43,
           title: "Técnico em Edificações",
-          description: "Aprenda a elaborar projetos, supervisionar obras e acompanhar processos construtivos.",
+          description:
+            "Aprenda a elaborar projetos, supervisionar obras e acompanhar processos construtivos.",
           category: "Construção",
           flag: "Construcao",
           img: {
             src: "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
             alt: "Edificações",
           },
+          slug: "tecnico-em-edificacoes",
         },
         {
           id: 44,
@@ -619,6 +675,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/2101137/pexels-photo-2101137.jpeg",
             alt: "Mineração",
           },
+          slug: "tecnico-em-mineracao",
         },
         {
           id: 45,
@@ -631,39 +688,46 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/8482822/pexels-photo-8482822.jpeg",
             alt: "Segurança do Trabalho",
           },
+          slug: "tecnico-em-seguranca-do-trabalho",
         },
         {
           id: 46,
           title: "Técnico em Prevenção e Combate ao Incêndio",
-          description: "Capacite-se em técnicas de prevenção, combate a incêndios e resposta a emergências.",
+          description:
+            "Capacite-se em técnicas de prevenção, combate a incêndios e resposta a emergências.",
           category: "Construção",
           flag: "Construcao",
           img: {
             src: "https://images.pexels.com/photos/8603020/pexels-photo-8603020.jpeg",
             alt: "Prevenção e Combate ao Incêndio",
           },
+          slug: "tecnico-em-prevencao-e-combate-ao-incendio",
         },
         {
           id: 47,
           title: "Curso Técnico em Defesa Civil",
-          description: "Formação para atuar na gestão de riscos, emergências e desastres naturais.",
+          description:
+            "Formação para atuar na gestão de riscos, emergências e desastres naturais.",
           category: "Construção",
           flag: "Construcao",
           img: {
             src: "https://images.pexels.com/photos/1463917/pexels-photo-1463917.jpeg",
             alt: "Defesa Civil",
           },
+          slug: "curso-tecnico-em-defesa-civil",
         },
         {
           id: 48,
           title: "Curso Técnico em Trânsito",
-          description: "Capacite-se para atuar em educação, fiscalização e gestão de trânsito urbano e rodoviário.",
+          description:
+            "Capacite-se para atuar em educação, fiscalização e gestão de trânsito urbano e rodoviário.",
           category: "Construção",
           flag: "Construcao",
           img: {
             src: "https://images.pexels.com/photos/20850198/pexels-photo-20850198.jpeg",
             alt: "Trânsito",
           },
+          slug: "curso-tecnico-em-transito",
         },
       ],
     },
@@ -692,6 +756,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/7299993/pexels-photo-7299993.jpeg",
             alt: "Agricultura",
           },
+          slug: "tecnico-em-agricultura",
         },
         {
           id: 50,
@@ -704,6 +769,7 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/10041321/pexels-photo-10041321.jpeg",
             alt: "Agropecuária",
           },
+          slug: "tecnico-em-agropecuaria",
         },
         {
           id: 51,
@@ -716,28 +782,33 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/5213973/pexels-photo-5213973.jpeg",
             alt: "Agroindústria",
           },
+          slug: "tecnico-em-agroindustria",
         },
         {
           id: 52,
           title: "Técnico em Aquicultura",
-          description: "Aprenda a criar, manejar e comercializar espécies aquáticas com técnicas sustentáveis.",
+          description:
+            "Aprenda a criar, manejar e comercializar espécies aquáticas com técnicas sustentáveis.",
           category: "Agro",
           flag: "Agro",
           img: {
             src: "https://images.pexels.com/photos/30737277/pexels-photo-30737277.jpeg",
             alt: "Aquicultura",
           },
+          slug: "tecnico-em-aquicultura",
         },
         {
           id: 53,
           title: "Técnico em Meio Ambiente",
-          description: "Formação para atuar na preservação ambiental, gestão de resíduos e projetos sustentáveis.",
+          description:
+            "Formação para atuar na preservação ambiental, gestão de resíduos e projetos sustentáveis.",
           category: "Agro",
           flag: "Agro",
           img: {
             src: "https://images.pexels.com/photos/1230157/pexels-photo-1230157.jpeg",
             alt: "Meio Ambiente",
           },
+          slug: "tecnico-em-meio-ambiente",
         },
       ],
     },
@@ -758,35 +829,41 @@ export default function Storaged(): CardPageProps[] {
         {
           id: 54,
           title: "Técnico em Gastronomia",
-          description: "Aprenda técnicas de cozinha, elaboração de cardápios e gestão de alimentos e bebidas.",
+          description:
+            "Aprenda técnicas de cozinha, elaboração de cardápios e gestão de alimentos e bebidas.",
           category: "Serviços",
           flag: "Servicos",
           img: {
             src: "https://images.pexels.com/photos/671956/pexels-photo-671956.jpeg",
             alt: "Gastronomia",
           },
+          slug: "tecnico-em-gastronomia",
         },
         {
           id: 55,
           title: "Técnico em Óptica",
-          description: "Capacite-se na fabricação, manutenção e ajuste de lentes, óculos e instrumentos ópticos.",
+          description:
+            "Capacite-se na fabricação, manutenção e ajuste de lentes, óculos e instrumentos ópticos.",
           category: "Serviços",
           flag: "Servicos",
           img: {
             src: "https://images.pexels.com/photos/32593246/pexels-photo-32593246.jpeg",
             alt: "Óptica",
           },
+          slug: "tecnico-em-optica",
         },
         {
           id: 56,
           title: "Curso Técnico em Design de Interiores",
-          description: "Aprenda a planejar, projetar e decorar ambientes com criatividade e funcionalidade.",
+          description:
+            "Aprenda a planejar, projetar e decorar ambientes com criatividade e funcionalidade.",
           category: "Serviços",
           flag: "Servicos",
           img: {
             src: "https://images.pexels.com/photos/276267/pexels-photo-276267.jpeg",
             alt: "Design de Interiores",
           },
+          slug: "curso-tecnico-em-design-de-interiores",
         },
         {
           id: 57,
@@ -799,8 +876,9 @@ export default function Storaged(): CardPageProps[] {
             src: "https://images.pexels.com/photos/8828439/pexels-photo-8828439.jpeg",
             alt: "Guia de Turismo",
           },
+          slug: "curso-tecnico-em-guia-de-turismo",
         },
       ],
     },
-  ]
+  ];
 }
