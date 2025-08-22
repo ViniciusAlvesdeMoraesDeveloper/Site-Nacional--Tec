@@ -103,7 +103,7 @@ export default function CursosSlugPage() {
                   </div>
 
                  
-                  <Link href={`${(course.slug)}`} passHref>
+                  <Link href={`/courses/${(course.slug)}`} passHref>
                     <button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg mt-auto">
                       Matricular Agora
                     </button>
