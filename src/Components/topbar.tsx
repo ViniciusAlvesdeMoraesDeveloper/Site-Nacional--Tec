@@ -35,14 +35,10 @@ export default function TopBar() {
               >
                 Cursos
               </Link>
+
+
               <Link
-                href="/servicos"
-                className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors"
-              >
-                Serviços
-              </Link>
-              <Link
-                href="#sobrenos"
+                href="#contato"
                 className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Sobre
@@ -57,7 +53,7 @@ export default function TopBar() {
 
             <div className="border-l border-green-700 pl-6 ml-6 flex items-center space-x-4">
               <Link
-                href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações."
+                href="https://wa.me/553173164817?text=Olá!%20Gostaria%20de%20mais%20informações."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-yellow-100 p-2 rounded-full hover:bg-green-700 transition-colors"
@@ -75,9 +71,9 @@ export default function TopBar() {
                 Cadastre-se!
               </button>
               <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-                <RegistrationForm/>
+                <RegistrationForm />
               </Modal>
-              
+
             </div>
           </div>
         </div>

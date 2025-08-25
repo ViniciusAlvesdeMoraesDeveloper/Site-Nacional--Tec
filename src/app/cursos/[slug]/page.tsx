@@ -6,6 +6,7 @@ import { slugify } from "@/utils/slugify"
 import { ArrowLeft, BookOpen, Clock, Users, Award } from "lucide-react"
 import Image from "next/image"
 import CoursePage from "@/app/courses/[slug]/page";
+import { MessageCircle } from "lucide-react"
 
 export default function CursosSlugPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -102,14 +103,14 @@ export default function CursosSlugPage() {
                     </div>
                   </div>
 
-                 
+
                   <Link href={`/courses/${(course.slug)}`} passHref>
                     <button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg mt-auto">
                       Matricular Agora
                     </button>
                   </Link>
                 </div>
-                
+
               </div>
             ))}
           </div>
@@ -123,9 +124,15 @@ export default function CursosSlugPage() {
           <p className="text-xl text-gray-300 mb-8">
             Nossa equipe está pronta para te ajudar a encontrar o curso ideal para seus objetivos
           </p>
-          <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105">
-            Falar com Consultor
-          </button>
+          <Link href="https://wa.me/553173164817?text=Olá!%20Gostaria%20de%20mais%20informações."
+            target="_blank"
+            rel="noopener noreferrer"><button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 " >
+
+              Falar com Consultor
+
+            </button>
+
+          </Link>
         </div>
       </section>
     </div>

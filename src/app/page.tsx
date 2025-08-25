@@ -74,6 +74,7 @@ export default function Page() {
             {filteredAreas.length === 0 && searchTerm !== "" && (
               <p className="text-center text-gray-500 mt-8">Nenhuma área encontrada para "{searchTerm}".</p>
             )}
+          
           </div>
         </section>
       </main>

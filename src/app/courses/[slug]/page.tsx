@@ -1,18 +1,17 @@
 // pp/courses/[slug]/page.tsx
-
 import Storaged, { Course } from "@/utils/storeged";
 import { CardPageProps } from "@/types/cousers";
+import CourseDetailsClient from "./CourseDetailsClient"; // Importa o novo componente cliente
 
 /**
- * Esta função diz ao Next.js quais slugs pré-renderizar no momento da construção.
- * É crucial para rotas dinâmicas.
+ * Esta função é crucial. Ela diz ao Next.js quais slugs pré-renderizar estaticamente
+ * no momento da construção da aplicação.
  */
 export async function generateStaticParams() {
   const areas = Storaged();
   const allCourses = areas.flatMap((area: CardPageProps) => area.courses);
 
   // Filtra cursos com slugs válidos para garantir que apenas URLs corretas sejam geradas.
-  // Em seguida, mapeia para o formato de objeto que o Next.js espera.
   return allCourses
     .filter((course) => course?.slug)
     .map((course) => ({
@@ -21,42 +20,29 @@ export async function generateStaticParams() {
 }
 
 /**
- * Este é o componente da sua página de detalhes do curso.
- * Ele recebe o 'slug' da URL e encontra o curso correspondente.
+ * Este é o componente principal da página de detalhes. Ele é um Server Component
+ * e é responsável por buscar os dados do curso a partir do slug.
  */
 export default function Page({ params }: { params: { slug: string } }) {
   const areas = Storaged();
 
-  // Combina todos os cursos em um único array para facilitar a busca.
+  // Busca todos os cursos para encontrar o que corresponde ao slug.
   const allCourses = areas.flatMap((area: CardPageProps) => area.courses);
 
-  // Usa o slug da URL para encontrar o curso correto.
+  // Encontra o curso correspondente ao slug na URL.
   const course = allCourses.find((c) => c?.slug === params.slug);
 
   // Se o curso não for encontrado, exibe uma mensagem de erro.
   if (!course) {
     return (
-      <div className="flex justify-center items-center h-screen bg-gray-100">
-        <h1 className="text-2xl font-bold text-gray-800">Curso não encontrado!</h1>
+      <div className="flex justify-center items-center h-screen bg-gray-100 dark:bg-gray-900">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Curso não encontrado!</h1>
       </div>
     );
   }
 
-  // Se o curso for encontrado, renderiza o seu conteúdo.
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24 bg-gray-100 text-gray-800">
-      <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
-      <p className="text-lg text-gray-700 mb-6">{course.description}</p>
-      <div className="w-full max-w-lg">
-        <img
-          src={course.img?.src}
-          alt={course.img?.alt}
-          className="w-full h-auto rounded-lg shadow-lg"
-        />
-      </div>
-      <p className="mt-8 text-xl font-semibold">
-        Categoria: <span className="text-blue-600">{course.category}</span>
-      </p>
-    </div>
-  );
+  // Passa os dados do curso para o componente cliente, que fará a renderização
+  // e o gerenciamento do estado para o modal. Usamos a assertiva de tipo "as Course"
+  // para garantir ao TypeScript que o objeto não é undefined.
+  return <CourseDetailsClient course={course as Course} />;
 }

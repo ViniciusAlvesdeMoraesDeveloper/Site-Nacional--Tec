@@ -18,21 +18,27 @@ export default function Footer() {
               width={100}
               height={100}
             /></div>
-            <div className='flex flex-col gap-1 '>
+            <div id='contato' className="flex flex-col mt-2 space-y-4">
               <h3 className="text-xl font-bold">Nacional Tec</h3>
               <p className="text-sm opacity-90">Educação Técnica de Qualidade</p>
-              <div id='contato' className="flex items-center mt-2">
-                <Link href="tel:11999999999" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium">
-                  <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(11) 99999-9999</span>
-                </Link>
+              <div id='contato' className="flex flex-col mt-2"> 
+                <div> 
+                  <Link href="tel:553173163416" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium">
+                    <Phone size={16} className="mr-2" />
+                    <span className="text-sm">(31)97316-3416 </span>
+                  </Link>
+                </div>
+                <div> 
+                  <Link href="tel:553173163292" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium">
+                    <Phone size={16} className="mr-2" />
+                    <span className="text-sm">(31)97316-3292 </span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Áreas ofertadas*/}
-
-
           <div className="flex flex-col items-center gap-6 py-8">
             <div className="text-center">
               <h1 className="text-2xl font-bold text-white">Áreas ofertadas</h1>
@@ -62,16 +68,12 @@ export default function Footer() {
             </nav>
           </div>
 
-
-
-
           {/* Social Media Links */}
           <div className="flex flex-col items-center gap-6 py-8">
             <div className="text-center">
               <h4 className="text-2xl font-bold text-white">Sobre Nós:</h4>
               <nav className="flex flex-col gap-4">
                 <Link href="/about" className="hover:text-yellow-200 transition-colors duration-200 text-sm">
-
                 </Link>
                 <div className="flex gap-2">
                   <Link
@@ -97,5 +99,5 @@ export default function Footer() {
         <p>&copy; 2024 Nacional Tec. Todos os direitos reservados.</p>
       </div>
     </footer>
-  )
+  );
 }

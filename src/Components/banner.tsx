@@ -9,7 +9,7 @@ const Banner: React.FC<BannerProps> = ({imagePath}) => {
   return (
     <div className="absolute inset-0">
       <Image
-        src={imagePath}
+        src="/facul.webp"
         alt="Banner de fundo com paisagem"
         layout="fill"
         objectFit="cover"
