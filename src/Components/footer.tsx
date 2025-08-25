@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import { Facebook } from 'lucide-react';
+import { Facebook, MapPin } from 'lucide-react';
 import React from 'react';
 import { Instagram } from 'lucide-react';
 import Image from 'next/image';
 import { Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { MapIcon } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -21,18 +23,29 @@ export default function Footer() {
             <div id='contato' className="flex flex-col mt-2 space-y-4">
               <h3 className="text-xl font-bold">Nacional Tec</h3>
               <p className="text-sm opacity-90">Educação Técnica de Qualidade</p>
-              <div id='contato' className="flex flex-col mt-2"> 
-                <div> 
-                  <Link href="tel:553173163416" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium">
-                    <Phone size={16} className="mr-2" />
-                    <span className="text-sm">(31)97316-3416 </span>
-                  </Link>
+              <div className='flex flex-col'>
+                <Link href="tel:553173163292" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
+                  <Phone size={16} className="mr-2" />
+                  <span className="text-sm">(31)97316-3292 </span>
+                </Link>
+
+                <Link href="tel:553173163292" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
+                  <Phone size={16} className="mr-2" />
+                  <span className="text-sm">(31)97316-3416 </span>
+                </Link>
+
+                <div className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
+                  <Mail width={16} height={16} className="text-white-400 mr-2" />
+                  <h2 className="text-xs hover:underline">
+                    gestaonacionaltec@gmail.com
+                  </h2>
                 </div>
-                <div> 
-                  <Link href="tel:553173163292" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium">
-                    <Phone size={16} className="mr-2" />
-                    <span className="text-sm">(31)97316-3292 </span>
-                  </Link>
+
+                <div className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium">
+                  <MapPin width={16} height={16} className="mr-2" />
+                  <h2 className="text-xs hover:underline">
+                    Rua Luiz Rodrigues dos Santos 44, Todos os Santos
+                  </h2>
                 </div>
               </div>
             </div>

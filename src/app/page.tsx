@@ -42,7 +42,7 @@ export default function Page() {
   }, [searchTerm]);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col w-full">
+    <div className="min-h-screen ">
       <TopBar />
       <main className="flex-1 w-full">
         {/* Seção do Hero, banner e search */}
@@ -54,7 +54,7 @@ export default function Page() {
           onSearch={handleSearch}
         />
         {/* Seção de áreas filtradas */}
-        <section className="py-16 w-full bg-white ">
+        <section className="py-16 w-full animated-background">
           <div id="cards" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

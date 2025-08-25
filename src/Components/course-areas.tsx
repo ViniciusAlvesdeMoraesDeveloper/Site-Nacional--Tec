@@ -7,7 +7,7 @@ interface AreaCardProps extends CardPageProps {}
 
 export default function AreaCard({ title, description, flag, img }: AreaCardProps) {
   return (
-    <div  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:scale-[1.02] w-full max-w-sm min-w-[280px]">
+    <div  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:scale-[1.02] w-full max-w-sm min-w-[280px] ">
       <div className="relative h-48 overflow-hidden w-full">
         <Image
           src={img?.src || "/placeholder.svg?height=200&width=400&query=curso"}
