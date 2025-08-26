@@ -1,13 +1,13 @@
 "use client";
 
-// Importações com caminhos relativos para componentes dentro de 'src/Components'
+// Importações...
 import TopBar from "../Components/topbar";
 import Footer from "../Components/footer";
 import BottomUpper from "../Components/bottomupper";
 import AreaCard from "../Components/course-areas";
 import HeroSection from "../Components/HeroSection";
 
-// Importações com alias '@/' para as pastas 'about', 'Modal' e 'utils'
+// Importações...
 import Storaged from "@/utils/storeged";
 import { AboutUsSection } from "@/about/aboutUsSection";
 import { AboutModal } from "@/about/aboutmodal";
@@ -25,26 +25,36 @@ export default function Page() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredAreas, setFilteredAreas] = useState(allAreas);
 
-  // A variável 'isModalOpen' é declarada apenas uma vez aqui.
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
-  
 
-  const handleSearch = (query: string) => {
+  // Função que realiza apenas a filtragem, sem rolagem
+  const filterAreas = (query: string) => {
     const lowerCaseQuery = query.toLowerCase();
-
     const results = allAreas.filter((area) => {
       const matchesTitle = area.title.toLowerCase().includes(lowerCaseQuery);
       const matchesFlag = area.flag.toLowerCase().includes(lowerCaseQuery);
       return matchesTitle || matchesFlag;
     });
-
     setFilteredAreas(results);
   };
 
+  // Esta função agora é chamada apenas pelo botão de busca
+  const handleSearchAndScroll = () => {
+    // Primeiro, realiza a filtragem
+    filterAreas(searchTerm);
+    
+    // Depois, rola a página para a seção de cards
+    const cardsSection = document.getElementById("cards");
+    if (cardsSection) {
+      cardsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // O useEffect agora chama apenas a função de filtragem, para manter a busca instantânea
   useEffect(() => {
-    handleSearch(searchTerm);
+    filterAreas(searchTerm);
   }, [searchTerm]);
 
   return (
@@ -57,7 +67,8 @@ export default function Page() {
           placeholderText="Pesquisar por cursos..."
           inputValue={searchTerm}
           onInputChange={setSearchTerm}
-          onSearch={handleSearch}
+          // O onSearch agora chama a nova função que inclui a rolagem
+          onSearch={handleSearchAndScroll}
         />
         <AboutUsSection onClick={() => setIsModalOpen(true)} />
 
@@ -82,7 +93,7 @@ export default function Page() {
             {filteredAreas.length === 0 && searchTerm !== "" && (
               <p className="text-center text-gray-500 mt-8">Nenhuma área encontrada para "{searchTerm}".</p>
             )}
-          
+
           </div>
         </section>
       </main>
