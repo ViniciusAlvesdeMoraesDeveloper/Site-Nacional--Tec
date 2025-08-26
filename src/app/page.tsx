@@ -1,16 +1,21 @@
-// src/pages/page.tsx
-
 "use client";
 
+// Importações com caminhos relativos para componentes dentro de 'src/Components'
 import TopBar from "../Components/topbar";
 import Footer from "../Components/footer";
 import BottomUpper from "../Components/bottomupper";
+import AreaCard from "../Components/course-areas";
+import HeroSection from "../Components/HeroSection";
+
+// Importações com alias '@/' para as pastas 'about', 'Modal' e 'utils'
 import Storaged from "@/utils/storeged";
-import AreaCard from "@/Components/course-areas";
-import HeroSection from "@/Components/HeroSection";
+import { AboutUsSection } from "@/about/aboutUsSection";
+import { AboutModal } from "@/about/aboutmodal";
+import Modal from "./Modal/Modal";
+
 import { useState, useEffect } from 'react';
 import { CardPageProps } from './card';
-import Modal from "./Modal/Modal";
+
 
 // Caminho da imagem na pasta 'public'
 const BANNER_IMAGE_PATH = '/.webp';
@@ -20,10 +25,11 @@ export default function Page() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredAreas, setFilteredAreas] = useState(allAreas);
 
+  // A variável 'isModalOpen' é declarada apenas uma vez aqui.
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
-
+  
 
   const handleSearch = (query: string) => {
     const lowerCaseQuery = query.toLowerCase();
@@ -53,6 +59,8 @@ export default function Page() {
           onInputChange={setSearchTerm}
           onSearch={handleSearch}
         />
+        <AboutUsSection onClick={() => setIsModalOpen(true)} />
+
         {/* Seção de áreas filtradas */}
         <section className="py-16 w-full animated-background">
           <div id="cards" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,6 +89,10 @@ export default function Page() {
 
       <Footer />
       <BottomUpper />
+      <AboutModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 }

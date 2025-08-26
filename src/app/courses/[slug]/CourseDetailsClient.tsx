@@ -54,20 +54,19 @@ export default function CourseDetailsClient({ course }: CourseDetailsProps) {
 
      {/* Seção para adicionar mais informações futuras */}
      <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
-      {/* O que você vai aprender? */}
       <div className="mt-6">
        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
         O que você vai aprender?
        </h2>
        <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-        {/* Aqui é onde a mágica acontece. Usamos `map` para renderizar os itens. */}
+        
         {course.whatYouWillLearn.map((item, index) => (
          <li key={index}>{item}</li>
         ))}
        </ul>
       </div>
 
-      {/* ... (o resto do seu código permanece igual) */}
+     
       {/* Benefícios do Curso */}
       <div className="mt-8">
        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
