@@ -50,6 +50,11 @@ export default function TopBar() {
                 Contato
               </Link>
             </nav>
+             {/* Acesso ao AVA*/}
+            <div>
+              <Link href="https://nacionaltecava.simpleacademy.tech/login" className='"text-white hover:text-yellow-100 p-2 rounded-full hover:bg-green-700 transition-colors'> Acesso ao AVA</Link>
+
+            </div>
 
             <div className="border-l border-green-700 pl-6 ml-6 flex items-center space-x-4">
               <Link

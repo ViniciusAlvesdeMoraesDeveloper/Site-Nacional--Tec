@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           {/* Áreas ofertadas*/}
-          <div className="flex flex-col items-center gap-6 py-8">
+          <div className="flex flex-col items-center gap-6 py-8 mr-8">
             <div className="text-center">
               <h1 className="text-2xl font-bold text-white">Áreas ofertadas</h1>
             </div>

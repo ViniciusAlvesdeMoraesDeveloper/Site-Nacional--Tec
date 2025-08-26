@@ -5,8 +5,10 @@ export interface Course {
   description: string
   category?: string
   flag?: string
+  whatYouWillLearn: string[]
   img?:{src:string
     alt:string
+    
   }
     
   
@@ -16,7 +18,7 @@ export interface CardPageProps {
   title: string
   description: string
   flag: string
-  category?: string
+  category?: string  
   img?: {
     src: string
     alt: string
