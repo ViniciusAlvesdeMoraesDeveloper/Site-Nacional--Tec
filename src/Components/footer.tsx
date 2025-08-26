@@ -24,15 +24,15 @@ export default function Footer() {
               <h3 className="text-xl font-bold">Nacional Tec</h3>
               <p className="text-sm opacity-90">Educação Técnica de Qualidade</p>
               <div className='flex flex-col'>
-                <Link href="tel:553173163292" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
+                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
                   <Phone size={16} className="mr-2" />
                   <span className="text-sm">(31)97316-3292 </span>
-                </Link>
+                </nav>
 
-                <Link href="tel:553173163292" className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
+                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
                   <Phone size={16} className="mr-2" />
                   <span className="text-sm">(31)97316-3416 </span>
-                </Link>
+                </nav>
 
                 <div className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
                   <Mail width={16} height={16} className="text-white-400 mr-2" />
