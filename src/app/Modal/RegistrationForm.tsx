@@ -1,7 +1,7 @@
-// Seu componente modificado
 'use client'
 import { useState, FormEvent } from "react";
-import { registerUser, RegistrationFormData } from '@/lib/api'; // Importe a função e a tipagem
+
+import { apiService, RegistrationFormData } from '@/lib/api'; 
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState<RegistrationFormData>({
@@ -28,8 +28,8 @@ export default function RegistrationForm() {
     setSubmitMessage('');
 
     try {
-      // ✅ Substituindo a simulação pela chamada real da API
-      await registerUser(formData);
+      // ✅ Use a instância do apiService para chamar o método registerUser
+      await apiService.registerUser(formData);
 
       setSubmitMessage('Cadastro realizado com sucesso! Em breve entraremos em contato.');
       setFormData({
@@ -48,11 +48,10 @@ export default function RegistrationForm() {
   };
 
   return (
-    // ... (o JSX do seu formulário permanece o mesmo)
     <form onSubmit={handleSubmit} className="p-4 space-y-6">
       <h2 className="text-2xl font-bold text-gray-800">Formulário de Inscrição</h2>
       <p className="text-gray-600">Preencha o formulário para se pré-inscrever em um de nossos cursos.</p>
-
+      
       {/* Seus campos de input */}
       <div>
         <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Nome Completo</label>
