@@ -56,7 +56,7 @@ export default function CourseDetailsClient({ course }: CourseDetailsProps) {
      <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
       <div className="mt-6">
        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-        O que você vai aprender?
+        O que este diploma te deixa apto para:
        </h2>
        <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
         
@@ -73,9 +73,9 @@ export default function CourseDetailsClient({ course }: CourseDetailsProps) {
         Benefícios do Curso 
        </h2>
        <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-        <li>Acesso vitalício ao conteúdo do curso.</li>
-        <li>Suporte direto do instrutor para tirar dúvidas.</li>
-        <li>Certificado de Conclusão para impulsionar seu currículo.</li>
+        <li>Entrada rápida e Direta no Mercado de Trabalho.</li>
+        <li>Crescimento profissional e reconhecimento formal.</li>
+        <li>Diploma para impulsionar seu currículo.</li>
        </ul>
       </div>
 
