@@ -3,9 +3,9 @@ import Image from "next/image"
 import { MessageCircle } from "lucide-react"
 import type { CardPageProps } from "@/app/card"
 
-interface AreaCardProps extends CardPageProps {}
 
-export default function AreaCard({ title, description, flag, img }: AreaCardProps) {
+
+export default function AreaCard({ title, description, flag, img }: CardPageProps) {
   return (
     <div id="cards" className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:scale-[1.02] w-full max-w-sm min-w-[280px] ">
       <div className="relative h-48 overflow-hidden w-full">

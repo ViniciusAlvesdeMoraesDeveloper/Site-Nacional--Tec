@@ -11,7 +11,8 @@ import HeroSection from "../Components/HeroSection";
 import Storaged from "@/utils/storeged";
 import { AboutUsSection } from "@/about/aboutUsSection";
 import { AboutModal } from "@/about/aboutmodal";
-import Modal from "./Modal/Modal";
+// Remova a importação do Modal não utilizado:
+// import Modal from "./Modal/Modal";
 
 import { useState, useEffect } from 'react';
 import { CardPageProps } from './card';
@@ -26,7 +27,8 @@ export default function Page() {
   const [filteredAreas, setFilteredAreas] = useState(allAreas);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleOpenModal = () => setIsModalOpen(true);
+  // Remova a função handleOpenModal, pois ela não é utilizada
+  // const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
   // Função que realiza apenas a filtragem, sem rolagem
@@ -91,7 +93,7 @@ export default function Page() {
               ))}
             </div>
             {filteredAreas.length === 0 && searchTerm !== "" && (
-              <p className="text-center text-gray-500 mt-8">Nenhuma área encontrada para "{searchTerm}".</p>
+              <p className="text-center text-gray-500 mt-8">Nenhuma área encontrada para {searchTerm}.</p>
             )}
 
           </div>

@@ -28,7 +28,7 @@ export default function RegistrationForm() {
     setSubmitMessage('');
 
     try {
-      // ✅ Use a instância do apiService para chamar o método registerUser
+      // ✅ Usa a instância do apiService para chamar o método registerUser
       await apiService.registerUser(formData);
 
       setSubmitMessage('Cadastro realizado com sucesso! Em breve entraremos em contato.');
@@ -39,8 +39,10 @@ export default function RegistrationForm() {
         courseOfInterest: '',
         message: '',
       });
-    } catch (error: any) {
-      setSubmitMessage(error.message); // Exibe a mensagem de erro da API ou de conexão
+    } catch (error) { // ✅ Remoção do ': any'
+      // O TypeScript agora inferirá o tipo de 'error'
+      const errorMessage = (error instanceof Error) ? error.message : "Ocorreu um erro desconhecido.";
+      setSubmitMessage(errorMessage);
       console.error('Erro ao enviar:', error);
     } finally {
       setIsSubmitting(false);
@@ -83,7 +85,7 @@ export default function RegistrationForm() {
           <option value="">Selecione a área do curso..</option>
           <option value="Áre da Saúde">Área da Saúde</option>
           <option value="Área de Administração e Gestão">Área de Administração e Gestão</option>
-          <option value="Área de TRecnoloiga e Informática">Área de Tecnologia e Informática</option>
+          <option value="Área de Tecnologia e Informática">Área de Tecnologia e Informática</option> {/* ✅ Correção da ortografia */}
           <option value="Área de Engenharia e Manutenção">Área de Engenharia e Manutenção</option>
           <option value="Área de Construção e Infraestrutura">Área de Construção e Infraestrutura</option>
           <option value="Área do Meio Ambiente e Agorpecuária">Área do Meio Ambiente e Agropecuária</option>
