@@ -8,7 +8,7 @@ export interface RegistrationFormData {
 }
 
 
-const API_BASE_URL = ''; // Exemplo: https://api.exemplo.com/
+const API_BASE_URL = 'process.env.NEXT_PUBLIC_API_URL'; // Exemplo: https://api.exemplo.com/
 const AUTH_ENDPOINT = `${API_BASE_URL}/auth/token`; // Endpoint para obter/renovar o token
 const REGISTER_ENDPOINT = `${API_BASE_URL}/register`; // Endpoint para registrar o usuário
 
