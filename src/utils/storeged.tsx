@@ -514,7 +514,7 @@ export default function Storaged(): Area[] {
       category: "Tecnologia",
       flag: "Informatica",
       img: {
-        src: "/Informatica.webp",
+        src: "/informatica.webp",
         alt: "Tecnologia Logo",
       },
       courses: [
