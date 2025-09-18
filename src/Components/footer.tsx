@@ -24,14 +24,35 @@ export default function Footer() {
               <h3 className="text-xl font-bold">Nacional Tec</h3>
               <p className="text-sm opacity-90">Educação Técnica de Qualidade</p>
               <div className='flex flex-col'>
+                
                 <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
                   <Phone size={16} className="mr-2" />
+                  <span className="text-sm">(31)97316-4814 </span>
+                </nav>
+                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
+                  <Phone size={16} className="mr-2" />
+                  <span className="text-sm">(31)97316-3416 </span>
+                </nav>
+                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
+                  <Phone size={16} className="mr-2" />
+                  <span className="text-sm">(31)98101-3141 </span>
+                </nav>
+                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
+                  <Phone size={16} className="mr-2" />
+                  <span className="text-sm">(31)97314-7297 </span>
+                </nav>
+                <nav>
+                <Phone size={16} className="mr-2" />
+                  <span className="text-sm">(31)97316-4815 </span>
+                </nav>
+                <nav>
+                <Phone size={16} className="mr-2" />
                   <span className="text-sm">(31)97316-3292 </span>
                 </nav>
 
                 <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
                   <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(31)97316-3416 </span>
+                  <span className="text-sm">(31)97316-4817 </span>
                 </nav>
 
                 <div className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
