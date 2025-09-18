@@ -1,136 +1,133 @@
 import Link from 'next/link';
-import { Facebook, MapPin } from 'lucide-react';
+import { Facebook, MapPin, Phone, Mail, Instagram } from 'lucide-react';
 import React from 'react';
-import { Instagram } from 'lucide-react';
 import Image from 'next/image';
-import { Phone } from 'lucide-react';
-import { Mail } from 'lucide-react';
-import { MapIcon } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-green-600 to-green-800 text-white py-8">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          {/* Logo/Imagem */}
-          <div className="flex items-center mb-4 md:mb-0">
-            <div><Image className='rounded-full mr-8'
-              src="/NacionaTec-logo.webp"
-              alt="Nacional Tec Logo"
-              width={100}
-              height={100}
-            /></div>
-            <div id='contato' className="flex flex-col mt-2 space-y-4">
-              <h3 className="text-xl font-bold">Nacional Tec</h3>
-              <p className="text-sm opacity-90">Educação Técnica de Qualidade</p>
-              <div className='flex flex-col'>
-                
-                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
-                  <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(31)97316-4814 </span>
-                </nav>
-                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
-                  <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(31)97316-3416 </span>
-                </nav>
-                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
-                  <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(31)98101-3141 </span>
-                </nav>
-                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
-                  <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(31)97314-7297 </span>
-                </nav>
-                <nav>
-                <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(31)97316-4815 </span>
-                </nav>
-                <nav>
-                <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(31)97316-3292 </span>
-                </nav>
+    <footer className="bg-gradient-to-r from-green-600 to-green-800 text-white py-12">
+      <div className="container mx-auto px-4">
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-                <nav className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
-                  <Phone size={16} className="mr-2" />
-                  <span className="text-sm">(31)97316-4817 </span>
-                </nav>
+          {/* Logo and About Section */}
+          <div className="flex flex-col items-center md:items-start space-y-4 text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start">
+              <Image 
+                className='rounded-full mb-4'
+                src="/NacionaTec-logo.webp"
+                alt="Nacional Tec Logo"
+                width={80}
+                height={80}
+              />
+              <h3 className="text-2xl font-bold">Nacional Tec</h3>
+              <p className="text-sm opacity-90 mt-1">Educação Técnica de Qualidade</p>
+            </div>
+            <div className="flex space-x-4 mt-4">
+              <Link
+                href="https://www.instagram.com/nacionaltec.ead"
+                className="hover:text-yellow-200 transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram size={24} />
+              </Link>
+              <Link
+                href="https://www.facebook.com/nacionaltec.ead"
+                className="hover:text-yellow-200 transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook size={24} />
+              </Link>
+            </div>
+          </div>
 
-                <div className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium mb-2">
-                  <Mail width={16} height={16} className="text-white-400 mr-2" />
-                  <h2 className="text-xs hover:underline">
-                    gestaonacionaltec@gmail.com
-                  </h2>
-                </div>
-
-                <div className="flex items-center hover:text-yellow-200 transition-colors duration-200 font-medium">
-                  <MapPin width={16} height={16} className="mr-2" />
-                  <h2 className="text-xs hover:underline">
-                    Rua Luiz Rodrigues dos Santos 44, Todos os Santos
-                  </h2>
-                </div>
+          {/* Contact and Location Section */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-lg font-semibold text-white mb-4">Contato</h4>
+            <div className="space-y-3 text-sm text-gray-200 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start hover:text-yellow-200 transition-colors duration-200">
+                <Mail size={16} className="mr-2" />
+                <a href="mailto:gestaonacionaltec@gmail.com" className="hover:underline">
+                  gestaonacionaltec@gmail.com
+                </a>
+              </div>
+              <div className="flex items-start justify-center md:justify-start hover:text-yellow-200 transition-colors duration-200">
+                <MapPin size={16} className="mr-2 mt-1" />
+                <span className="text-wrap">Rua Luiz Rodrigues dos Santos 44, Todos os Santos</span>
               </div>
             </div>
           </div>
 
-          {/* Áreas ofertadas*/}
-          <div className="flex flex-col items-center gap-6 py-8 mr-8">
-            <div className="text-center">
-              <h1 className="text-2xl font-bold text-white">Áreas ofertadas</h1>
+          {/* Service Channels Section with all phones */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-lg font-semibold text-white mb-4">Canais de Atendimento</h4>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-200 text-center md:text-left">
+              <div className="flex items-center hover:text-yellow-200 transition-colors duration-200">
+                <Phone size={16} className="mr-2" />
+                <span>(31) 97316-4814</span>
+              </div>
+              <div className="flex items-center hover:text-yellow-200 transition-colors duration-200">
+                <Phone size={16} className="mr-2" />
+                <span>(31) 97316-3416</span>
+              </div>
+              <div className="flex items-center hover:text-yellow-200 transition-colors duration-200">
+                <Phone size={16} className="mr-2" />
+                <span>(31) 98101-3141</span>
+              </div>
+              <div className="flex items-center hover:text-yellow-200 transition-colors duration-200">
+                <Phone size={16} className="mr-2" />
+                <span>(31) 97314-7297</span>
+              </div>
+              <div className="flex items-center hover:text-yellow-200 transition-colors duration-200">
+                <Phone size={16} className="mr-2" />
+                <span>(31) 97316-4815</span>
+              </div>
+              <div className="flex items-center hover:text-yellow-200 transition-colors duration-200">
+                <Phone size={16} className="mr-2" />
+                <span>(31) 97316-3292</span>
+              </div>
+              <div className="flex items-center hover:text-yellow-200 transition-colors duration-200">
+                <Phone size={16} className="mr-2" />
+                <span>(31) 97316-4817</span>
+              </div>
             </div>
-            <nav className="flex flex-wrap justify-center gap-4 max-w-7xl">
-              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+          </div>
+          
+          {/* Areas Offered Section */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-lg font-semibold text-white mb-4">Áreas Ofertadas</h4>
+            <div className="flex flex-col gap-2 text-sm text-gray-200 text-center md:text-left">
+              <span className="hover:text-yellow-200 transition-colors duration-200 cursor-pointer">
                 Área da Saúde
               </span>
-              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+              <span className="hover:text-yellow-200 transition-colors duration-200 cursor-pointer">
                 Área de Tecnologia
               </span>
-              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+              <span className="hover:text-yellow-200 transition-colors duration-200 cursor-pointer">
                 Área de Administração
               </span>
-              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+              <span className="hover:text-yellow-200 transition-colors duration-200 cursor-pointer">
                 Área de Engenharia e Manutenção
               </span>
-              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+              <span className="hover:text-yellow-200 transition-colors duration-200 cursor-pointer">
                 Área de Construção e Infraestrutura
               </span>
-              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+              <span className="hover:text-yellow-200 transition-colors duration-200 cursor-pointer">
                 Área de Meio Ambiente e Agropecuária
               </span>
-              <span className="hover:text-yellow-200 transition-colors duration-200 font-medium cursor-pointer">
+              <span className="hover:text-yellow-200 transition-colors duration-200 cursor-pointer">
                 Área de Serviços
               </span>
-            </nav>
-          </div>
-
-          {/* Social Media Links */}
-          <div className="flex flex-col items-center gap-6 py-8">
-            <div className="text-center">
-              <h4 className="text-2xl font-bold text-white">Sobre Nós:</h4>
-              <nav className="flex flex-col gap-4">
-                <Link href="/about" className="hover:text-yellow-200 transition-colors duration-200 text-sm">
-                </Link>
-                <div className="flex gap-2">
-                  <Link
-                    href="https://www.instagram.com/nacionaltec.ead?igsh=MThmYWhibjdvOTRheQ=="
-                    className="hover:text-yellow-200 transition-colors duration-200"
-                  >
-                    <Instagram size={24} />
-                  </Link>
-                  <Link
-                    href="https://www.facebook.com/nacionaltec.ead?mibextid=wwXIfr&mibextid=wwXIfr"
-                    className="hover:text-yellow-200 transition-colors duration-200"
-                  >
-                    <Facebook size={24} />
-                  </Link>
-                </div>
-              </nav>
             </div>
           </div>
         </div>
-      </div>
-      {/* Copyright */}
-      <div className="border-t border-white/20 mt-8 pt-4 text-center text-sm opacity-80">
-        <p>&copy; 2024 Nacional Tec. Todos os direitos reservados.</p>
+
+        {/* Copyright Section */}
+        <div className="border-t border-white/20 mt-12 pt-4 text-center text-sm opacity-80">
+          <p>&copy; {new Date().getFullYear()} Nacional Tec. Todos os direitos reservados.</p>
+        </div>
       </div>
     </footer>
   );
