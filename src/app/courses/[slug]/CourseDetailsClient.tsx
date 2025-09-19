@@ -18,7 +18,7 @@ export default function CourseDetailsClient({ course }: CourseDetailsProps) {
  const [isModalOpen, setIsModalOpen] = useState(false);
 
  return (
-  <div className="flex flex-col items-center justify-center p-8 bg-gradient-to-r from-green-900 transition-colors duration-1000 w-full">
+  <div className="flex flex-col items-center justify-center p-8 bg-gradient-to-r from-green-900 transition-colors duration-1000 w-full mt-12 ">
    {/* Botão para voltar, alinhado com o ícone */}
    <div className="w-full max-w-4xl mb-6">
     <Link

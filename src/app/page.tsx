@@ -61,7 +61,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen ">
-      <TopBar />
+      
       <main className="flex-1 w-full">
         {/* Seção do Hero, banner e search */}
         <HeroSection
@@ -100,7 +100,7 @@ export default function Page() {
         </section>
       </main>
 
-      <Footer />
+      
       <BottomUpper />
       <AboutModal
         isOpen={isModalOpen}

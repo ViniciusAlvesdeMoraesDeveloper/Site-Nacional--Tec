@@ -17,7 +17,7 @@ export default function CursosSlugPage() {
 
   if (!currentArea) {
     return (
-      <div className="bg-gray-50 flex flex-col items-center justify-center min-h-screen text-center p-4">
+      <div className="bg-gray-50 flex flex-col items-center justify-center min-h-screen text-center p-4 ">
         <div className="bg-white rounded-xl shadow-lg p-8 max-w-md">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Área não encontrada!</h1>
           <p className="text-gray-600 mb-6">A área de cursos que você procura não existe ou foi movida.</p>
@@ -36,7 +36,7 @@ export default function CursosSlugPage() {
   // Card dos cursos 
   const realCourses = currentArea.courses || []
   return (
-    <div className="bg-gray-50 flex flex-col w-full">
+    <div className="bg-gray-50 flex flex-col w-full mt-8">
       {/* Header */}
       <div className="bg-gradient-to-r from-yellow-500 to-green-500 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

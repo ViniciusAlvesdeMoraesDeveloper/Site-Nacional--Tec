@@ -1,11 +1,18 @@
-"use client"
+"use client";
+
 import React, { useState } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
 import Link from "next/link";
 import Modal from "@/app/Modal/Modal";
 import RegistrationForm from "@/app/Modal/RegistrationForm";
 
-export default function TopBar() {
+// Define the component's props interface
+interface TopbarProps {
+  onAboutClick: () => void;
+}
+
+// Pass the props into the component's function signature
+export default function TopBar({ onAboutClick }: TopbarProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -23,7 +30,7 @@ export default function TopBar() {
             </Link>
           </div>
 
-          {/* Botão  para mobile */}
+          {/* Botão para mobile */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -39,7 +46,13 @@ export default function TopBar() {
             <nav className="flex items-center space-x-6">
               <Link href="#header" className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium">Início</Link>
               <Link href="#cards" className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium">Cursos</Link>
-              <Link href="#sobre" className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium">Sobre</Link>
+              {/* Button to open the "About" modal, which calls the prop function */}
+              <button
+                onClick={onAboutClick}
+                className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
+              >
+                Sobre
+              </button>
               <Link href="#contato" className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium">Contato</Link>
             </nav>
 
@@ -75,7 +88,13 @@ export default function TopBar() {
         <div className="md:hidden bg-green-600 text-white flex flex-col px-4 py-4 space-y-3">
           <Link href="#header" onClick={() => setIsMenuOpen(false)} className="hover:text-yellow-100">Início</Link>
           <Link href="#cards" onClick={() => setIsMenuOpen(false)} className="hover:text-yellow-100">Cursos</Link>
-          <Link href="#sobre" onClick={() => setIsMenuOpen(false)} className="hover:text-yellow-100">Sobre</Link>
+          {/* Button to open the "About" modal on mobile */}
+          <button
+            onClick={() => { setIsMenuOpen(false); onAboutClick(); }}
+            className="text-left w-full hover:text-yellow-100"
+          >
+            Sobre
+          </button>
           <Link href="#contato" onClick={() => setIsMenuOpen(false)} className="hover:text-yellow-100">Contato</Link>
           <Link
             href="https://nacionaltecava.simpleacademy.tech/login"
