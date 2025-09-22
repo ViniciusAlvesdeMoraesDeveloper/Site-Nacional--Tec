@@ -10,12 +10,14 @@ import Topbar from "@/Components/topbar"; // Importa o componente da topbar
 import { AboutModal } from "@/about/aboutmodal"; // Importa o modal "Sobre Nós"
 import { PrivacyContent } from "@/Components/PrivacyContent"; // Importa o conteúdo da política de privacidade
 import Modal from "@/app/Modal/Modal"; // Importa seu componente de modal genérico
+import { title } from "process";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-poppins",
 });
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +28,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 
 
 export default function RootLayout({
@@ -47,15 +50,15 @@ export default function RootLayout({
         <Topbar onAboutClick={openAboutModal} />
         {children}
         <Footer onPrivacyClick={openPrivacyModal} onAboutClick={openAboutModal} />
-        
-        
+
+
         <AboutModal isOpen={isAboutModalOpen} onClose={closeAboutModal} />
-        
-        
+
+
         <Modal isOpen={isPrivacyModalOpen} onClose={closePrivacyModal}>
-            <PrivacyContent />
+          <PrivacyContent />
         </Modal>
-        
+
         <div id="modal-root"></div>
       </body>
     </html>

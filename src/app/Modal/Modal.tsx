@@ -26,7 +26,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
         >
           {/* Botão de fechar */}
           <button
-            className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+            className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-4xl font-bold"
             onClick={onClose}
           >
             &times;
